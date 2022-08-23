@@ -50,7 +50,18 @@ app.get('/recipes/instructions/:id', async (req, res) => {
     const data = response.data;
         console.log(data)
     res.json(data)
-}); 
+});
+
+// search ingredients
+app.get('/ingredients/:query', async (req, res) => {
+    const response = await axios.get(
+        `https://api.spoonacular.com/food/ingredients/search?query=${req.params.query}&number=100&apiKey=${API_KEY}`
+    );
+    const data = response.data;
+    const sortedIngredients = data.results.map(item => item.name).filter(name => name.includes(req.params.query)).sort();
+        console.log(data)
+    res.json(sortedIngredients)
+});
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
