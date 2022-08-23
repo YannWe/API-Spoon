@@ -43,4 +43,4 @@ This should allow for the restriction of results down to recipes based on the us
 1. Since a user needs to input ingredients into their cabinet, it should be possible to search for them via the spoonacular API and return the results to the user that they can select and then place them into their cabinet. This will make sure we have the right spelling and wording in correspondance with how these ingredients are saved on the api side (and therefore corresponding to how they are spelled in the recipe search)
 
 **Spoonacular API capabilities vs Req's:**
-1. Technically this works, even with autocomplete. However, if the user types "sugar", the exact term sugar is returned as the 31st result. Even when utilizing their search parameters, these again don't work. Potentially due to the free version? This can be fixed by using .sort().
+1. Technically this works, even with autocomplete. However, if the user types "sugar", the exact term sugar is returned as the 31st result. Even when utilizing their search parameters, these again don't work. Potentially due to the free version? This can be fixed by using .filter() and .sort().
