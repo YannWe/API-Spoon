@@ -38,6 +38,7 @@
     
 This should allow for the restriction of results down to recipes based on the users preferences.   
 *WATCHOUT* we have been unable to get this to work so far, so we might have to restrict this on our end during call.
+*UPDATE* restrictions seem to be working when used in the complexSearch with `query=` instead of `includeIngredients=` 
 
 ### 2. Ingredient Finder:
 1. Since a user needs to input ingredients into their cabinet, it should be possible to search for them via the spoonacular API and return the results to the user that they can select and then place them into their cabinet. This will make sure we have the right spelling and wording in correspondence with how these ingredients are saved on the api side (and therefore corresponding to how they are spelled in the recipe search)

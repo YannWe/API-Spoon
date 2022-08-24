@@ -35,7 +35,8 @@ app.get('/recipes/getrecipe/:id', async (req, res) => {
 // get recipe by complex search - beware: this is an exact search - if 1 ingredient is missing from the recipe, no results will appear
 app.get('/recipes/complex/:query', async (req, res) => {
     const response = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${req.params.query}&diet="vegetarian"&apiKey=${API_KEY}`
+        /* `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${req.params.query}&diet="vegetarian"&apiKey=${API_KEY}` */
+        `https://api.spoonacular.com/recipes/complexSearch?query=${req.params.query}&diet=vegetarian&apiKey=${API_KEY}` // this api call gives recipes according to specified diet
     );
     const data = response.data;
         console.log(data)
